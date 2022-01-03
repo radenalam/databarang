@@ -14,7 +14,7 @@ Selling_price = StringVar()
 Quantity = StringVar()
 
 window.geometry("600x400")
-window.title("Inventory Management")
+window.title("Data Barang")
 
 
 def insert():
