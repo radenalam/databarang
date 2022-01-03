@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import Label
 from tkinter import Text
-from tkinter import ttk
 from tkinter import messagebox
 
 
@@ -80,7 +79,7 @@ spid.place(x=490, y=40)
 Insert = Button(window, text='Insert', width=8, bg="white", fg="black", command=insert)
 Insert.place(x=2, y=320)
 
-Clear = ttk.Button(window, text='Clear', width=8, bg="white", fg="black", command=clear)
+Clear = Button(window, text='Clear', width=8, bg="white", fg="black", command=clear)
 Clear.place(x=360, y=340)
 
 shw = Button(window, text="Show", width=8, bg="white", fg="black", command=show)
