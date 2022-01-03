@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import Label
 from tkinter import Text
+from tkinter import ttk
 from tkinter import messagebox
 
 
@@ -76,13 +77,13 @@ nameid.place(x=410, y=40)
 spid = Label(master=window, text="Jumlah:\t", fg="white", bg="grey", relief=FLAT, font=("calibry", 8))
 spid.place(x=490, y=40)
 
-Insert = Button(window, text='Insert', width=8, bg="white", fg="black", command=insert)
+Insert = ttk.Button(window, text='Insert', command=insert)
 Insert.place(x=2, y=320)
 
-Clear = Button(window, text='Clear', width=8, bg="white", fg="black", command=clear)
+Clear = ttk.Button(window, text='Clear', command=clear)
 Clear.place(x=360, y=340)
 
-shw = Button(window, text="Show", width=8, bg="white", fg="black", command=show)
+shw = ttk.Button(window, text="Show", command=show)
 shw.place(x=100, y=320)
 
 display = Text(window, width=43, height=20, bg='light grey')
