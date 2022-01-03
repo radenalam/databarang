@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import Label
 from tkinter import Text
+from tkinter import ttk
 from tkinter import messagebox
 
 
@@ -31,10 +32,11 @@ def insert():
 def show():
     file = open("list.txt", 'r')
     read = file.read()
-    display.delete(0.0)
-    display.insert(0.0, a)
+    for a in read[::-1]:
+        display.insert(0.0, a)
         
-
+def clear():
+    display.delete(1.0, END)
 
 # label entities
 IM = Label(master=window, text="Data Barang\t", fg="black", bg="white", relief=RAISED, font=("calibry", 12))
@@ -42,7 +44,7 @@ IM.place(x=10, y=1)
 
 Product_list = Label(master=window, text="Daftar Barang\t", fg="black", bg="white", relief=RAISED,
                      font=("arial", 12))
-Product_list.place(x=400, y=1)
+Product_list.place(x=360, y=1)
 
 prod_id = Label(master=window, text="kode produk:", fg="white", bg="grey", relief=FLAT, font=("calibry", 8))
 prod_id.place(x=10, y=40)
@@ -75,12 +77,17 @@ nameid.place(x=410, y=40)
 spid = Label(master=window, text="Jumlah:\t", fg="white", bg="grey", relief=FLAT, font=("calibry", 8))
 spid.place(x=490, y=40)
 
-Insert = Button(window, relief=RAISED, text='Insert', width=8, bg="white", fg="black", command=insert)
+Insert = Button(window, text='Insert', width=8, bg="white", fg="black", command=insert)
 Insert.place(x=2, y=320)
 
-shw = Button(window, relief=RAISED, text="Show", width=8, bg="white", fg="black", command=show)
+Clear = ttk.Button(window, text='Clear', width=8, bg="white", fg="black", command=clear)
+Clear.place(x=360, y=340)
+
+shw = Button(window, text="Show", width=8, bg="white", fg="black", command=show)
 shw.place(x=100, y=320)
 
 display = Text(window, width=43, height=20, bg='light grey')
 display.place(x=230, y=70)
+
+
 window.mainloop()
